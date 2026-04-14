@@ -1,6 +1,6 @@
-# clawsec-templates
+# onyx-templates
 
-YAML detection rules for [clawsec](https://github.com/ClawGuard-Labs/clawsec). This repository holds **only** templates; the engine lives in **clawsec** (`internal/templates/`).
+YAML detection rules for [onyx](https://github.com/ClawGuard-Labs/onyx). This repository holds **only** templates; the engine lives in **onyx** (`internal/templates/`).
 
 ## Usage
 
@@ -48,15 +48,15 @@ nuclei-templates/ai-services/
 
 ## Run with a local clone
 
-Point **`--behavioral-templates`** at this repo’s **`behavioral-templates/`** directory (not the repo root, or the loader would try to parse Nuclei YAML as behavioral rules). Example when this checkout is **`./clawsec-templates`** next to the binary’s cwd:
+Point **`--behavioral-templates`** at this repo’s **`behavioral-templates/`** directory (not the repo root, or the loader would try to parse Nuclei YAML as behavioral rules). Example when this checkout is **`./onyx-templates`** next to the binary’s cwd:
 
 ```bash
-./bin/clawsec \
-  --behavioral-templates ./clawsec-templates/behavioral-templates \
-  --nuclei-templates ./clawsec-templates/nuclei-templates
+./bin/onyx \
+  --behavioral-templates ./onyx-templates/behavioral-templates \
+  --nuclei-templates ./onyx-templates/nuclei-templates
 ```
 
-Installed systems typically use **`/etc/clawsec/behavioral-templates`** and **`/etc/clawsec/nuclei-templates`**. **clawsec** defaults are **`./clawsec-templates/behavioral-templates`** and **`./nuclei-templates`**—adjust flags or layout as needed.
+Installed systems typically use **`/etc/onyx/behavioral-templates`** and **`/etc/onyx/nuclei-templates`**. **onyx** defaults are **`./onyx-templates/behavioral-templates`** and **`./nuclei-templates`**—adjust flags or layout as needed.
 
 ## Authoring rules
 
@@ -64,4 +64,4 @@ See **[AUTHORING.md](./AUTHORING.md)** for the behavioral YAML schema, matcher t
 
 ## Contributing
 
-Open pull requests for YAML templates and docs in this repo only; code changes belong in **clawsec**.
+Open pull requests for YAML templates and docs in this repo only; code changes belong in **onyx**.
