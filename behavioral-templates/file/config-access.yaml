@@ -21,5 +21,14 @@ matchers:
       - .toml
       - .env
       - .ini
+      - .conf
+
+  - type: session
+    field: has_ai_process
+    equals: true
+
+  - type: filepath
+    regex: '(?i)(node_modules|/site-packages/|/dist-packages/|__pycache__|/\.git/|/\.cache/|/\.pnpm|pnpm-store|pnpm-lock|package-lock\.json|yarn\.lock|poetry\.lock|Cargo\.lock|go\.sum|uv\.lock|/\.venv/|/venv/|/\.vscode/|/\.cursor/|/\.idea/|/snap/|/usr/share/|/usr/lib/python|/var/lib/|/\.cargo/registry|/\.npm/|/\.nuget/|/target/|/dist/|/build/|/vendor/|/tmp/|/var/tmp/|/run/user/)'
+    negate: true
 
 matchers-condition: and

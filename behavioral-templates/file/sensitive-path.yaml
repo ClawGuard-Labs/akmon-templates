@@ -16,6 +16,30 @@ matchers:
   - type: risk-flag
     flags: [sensitive]
 
+  - type: filepath
+    words:
+      - /etc/shadow
+      - /etc/gshadow
+      - /etc/sudoers
+      - /etc/pam.d/
+      - /etc/security/
+
+      - /etc/ssh/ssh_host_
+      - /etc/ssh/sshd_config
+
+      - /etc/ssl/private/
+      - /etc/pki/tls/private/
+
+      - /proc/self/environ
+
+      - /.aws/credentials
+      - /.aws/config
+      - /.docker/config.json
+      - /.kube/config
+      - /var/run/secrets/kubernetes.io/serviceaccount/token
+      - /run/secrets/
+    condition: or
+
   # Only fire when the session is confirmed to contain an AI process.
   # This prevents false positives from system daemons (systemd-oomd,
   # IDE helpers, etc.) that also read /proc or /sys paths.

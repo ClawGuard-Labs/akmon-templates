@@ -19,4 +19,8 @@ matchers:
     values: ["0", "22", "53", "80", "443"]
     negate: true
 
+  - type: session
+    field: is_ai_process
+    equals: true
+
 matchers-condition: and

@@ -21,8 +21,16 @@ matchers:
 
   # Only fire within a confirmed AI session to avoid noise from general-purpose
   # daemons (VS Code, gateways, oom-killer) that also read/write multiple files.
+  - type: process
+    field: is_ai_process
+    equals: true
   - type: session
     field: has_ai_process
     equals: true
+
+  # Drop paths that almost never represent “inference I/O” but dominate volume:
+  - type: filepath
+    regex: (?i)(/tmp/|/var/tmp/|/dev/shm/|/proc/|/sys/|/dev/|/run/user/|\.cache/|__pycache__|/site-packages/|/dist-packages/|/pip/|/pip-tools/|pip/_cache|node_modules/|/\.git/|\.venv/|/venv/|/\.local/share/|/\.npm/|/\.pnpm-store/|/\.gradle/|/\.m2/|jupyter/runtime|ipython/profile|/\.cargo/registry|/\.rustup/|/\.nuget/)
+    negate: true
 
 matchers-condition: and

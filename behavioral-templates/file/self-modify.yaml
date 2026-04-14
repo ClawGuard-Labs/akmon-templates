@@ -4,18 +4,23 @@ info:
   author: sl4y3r
   severity: high
   description: >
-    A process wrote to a binary that was previously executed within the same
-    session. This pattern is characteristic of self-modifying code or
-    an AI agent replacing its own executable.
+    The same PID opened its own executable path for writing (O_WRONLY, O_RDWR,
+    or O_CREAT). Uses file_open flags, not generic file_rw, so plain reads of
+    the binary are not alerted. Requires that this PID previously exec’d that
+    path in the session (same-path, same-process tampering).
   tags: [ai, persistence, tamper, high-risk]
   risk-score: 80
 
 matchers:
   - type: event-type
-    values: [file_rw]
+    values: [file_open]
+
+  - type: file
+    field: is_write_open
+    equals: true
 
   - type: session
-    field: exec_binary_match_filepath
+    field: exec_binary_match_filepath_same_pid
     equals: true
 
 matchers-condition: and
