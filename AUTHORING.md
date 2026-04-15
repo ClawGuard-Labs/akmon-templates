@@ -1,8 +1,8 @@
 # Authoring template rules
 
-This document describes how to write **behavioral** (Onyx) YAML rules under `behavioral-templates/`. **Nuclei** rules use the standard Nuclei v3 format.
+This document describes how to write **behavioral** (Akmon) YAML rules under `behavioral-templates/`. **Nuclei** rules use the standard Nuclei v3 format.
 
-Implementation details live in **onyx**: `internal/templates/schema.go`, `internal/templates/loader.go`, and `internal/detector/engine.go`.
+Implementation details live in **akmon**: `internal/templates/schema.go`, `internal/templates/loader.go`, and `internal/detector/engine.go`.
 
 ---
 

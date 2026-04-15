@@ -1,6 +1,6 @@
-# onyx-templates
+# akmon-templates
 
-YAML detection rules for [onyx](https://github.com/ClawGuard-Labs/onyx). This repository holds **only** templates; the engine lives in **onyx** (`internal/templates/`).
+YAML detection rules for [akmon](https://github.com/ClawGuard-Labs/akmon). This repository holds **only** templates; the engine lives in **akmon** (`internal/templates/`).
 
 ## Usage
 
@@ -48,15 +48,15 @@ nuclei-templates/ai-services/
 
 ## Run with a local clone
 
-Point **`--behavioral-templates`** at this repo’s **`behavioral-templates/`** directory (not the repo root, or the loader would try to parse Nuclei YAML as behavioral rules). Example when this checkout is **`./onyx-templates`** next to the binary’s cwd:
+Point **`--behavioral-templates`** at this repo’s **`behavioral-templates/`** directory (not the repo root, or the loader would try to parse Nuclei YAML as behavioral rules). Example when this checkout is **`./akmon-templates`** next to the binary’s cwd:
 
 ```bash
-./bin/onyx \
-  --behavioral-templates ./onyx-templates/behavioral-templates \
-  --nuclei-templates ./onyx-templates/nuclei-templates
+./bin/akmon \
+  --behavioral-templates ./akmon-templates/behavioral-templates \
+  --nuclei-templates ./akmon-templates/nuclei-templates
 ```
 
-Installed systems typically use **`/etc/onyx/behavioral-templates`** and **`/etc/onyx/nuclei-templates`**. **onyx** defaults are **`./onyx-templates/behavioral-templates`** and **`./nuclei-templates`**—adjust flags or layout as needed.
+Installed systems typically use **`/etc/akmon/behavioral-templates`** and **`/etc/akmon/nuclei-templates`**. **akmon** defaults are **`./akmon-templates/behavioral-templates`** and **`./nuclei-templates`**—adjust flags or layout as needed.
 
 ## Authoring rules
 
@@ -64,4 +64,4 @@ See **[AUTHORING.md](./AUTHORING.md)** for the behavioral YAML schema, matcher t
 
 ## Contributing
 
-Open pull requests for YAML templates and docs in this repo only; code changes belong in **onyx**.
+Open pull requests for YAML templates and docs in this repo only; code changes belong in **akmon**.
